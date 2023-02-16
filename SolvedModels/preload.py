@@ -94,8 +94,8 @@ params['wMax']              = 0.99
 
 ## Shock correlation params
 params['cov11']             = 1.0
-params['cov12']             = 0.0
-params['cov13']             = 0.0
+params['cov12']             = -0.1
+params['cov13']             = -0.1
 params['cov14']             = 0.0
 params['cov21']             = -0.1
 params['cov22']             = 1.0
@@ -165,9 +165,6 @@ modelsol = {
 
 pcts = {'W':[.5],'Z':[.5],'V':[.25,.5,.75]}
 
-# 30 year time periods
-T = 1200
-dt = 1/12
 
 # Natural boundatry conditions
 bc = {'natural':True}
@@ -268,7 +265,7 @@ sigmaNhfn = lambda x: np.transpose([vol(x) for vol in sigmaNh])
 
 bc = {'natural':True}
 dt = 1/12
-T = 1200
+T = 360
 
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
 expoElasExpertsC, priceElasExpertsC, _, _, costElasExpertsC, phit1ExpertsC, phit2ExpertsC = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
