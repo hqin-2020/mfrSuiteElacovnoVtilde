@@ -94,12 +94,12 @@ params['wMax']              = 0.99
 
 ## Shock correlation params
 params['cov11']             = 1.0
-params['cov12']             = -0.1
+params['cov12']             = 0.0
 params['cov13']             = -0.1
 params['cov14']             = 0.0
 params['cov21']             = -0.1
 params['cov22']             = 1.0
-params['cov23']             = 0.0
+params['cov23']             = -0.1
 params['cov24']             = 0.0
 params['cov31']             = 0.0
 params['cov32']             = 0.0
